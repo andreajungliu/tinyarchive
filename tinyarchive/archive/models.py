@@ -5,7 +5,6 @@ from django.forms import CharField, URLField
 from stdimage import StdImageField
 from archive.consts import *
 
-
 class ArchiveDocument(models.Model):
     def __str__(self):
         if self.name:
@@ -15,15 +14,20 @@ class ArchiveDocument(models.Model):
     objects = InheritanceManager()
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=False)
-    creator = models.CharField(max_length=50, blank="True")
+    creator = models.CharField(max_length=50, blank=True)
+    cultures_periods= models.CharField (max_length=100, null=True)
+    production_date= models.DateField(auto_now=True)
+    production_place= models.CharField(max_length=200, null=True)
+    collected_location= models.CharField(max_length=200, blank = True)
+    collected_dates= models.DateField(auto_now=True)
+    measurements= models.CharField(max_length=200, blank= True)
     photo_image = StdImageField(
         upload_to="photographs/",
         variations={"thumbnail": {"width": 300, "height": 300}},
         null=True,
         blank = True,
     )
-
-
+  
 class AssociatedImage(models.Model):
 
     name = models.CharField(max_length=200)
@@ -46,6 +50,7 @@ class AudioRecording(ArchiveDocument):
     recording_date = models.DateField(auto_now=True)
     audio_file = models.FileField(upload_to="sounds/", null=True)
     
+
 class Photograph(ArchiveDocument):
     photo_type = models.CharField(
         max_length=20,
@@ -72,7 +77,7 @@ class Artifact(ArchiveDocument):
     material = models.CharField(
         max_length=50, choices=MATERIAL_CHOICES, default=MAT_GLASS)
     model3d = models.URLField(max_length=500, blank="True")
-
+   
 
 class Document(ArchiveDocument):
     # might want to do something to standardize this later so people can't
@@ -80,3 +85,4 @@ class Document(ArchiveDocument):
     # and codes?
     language = models.CharField(max_length=200)
     transcription = models.TextField(blank=True, null=False)
+ 

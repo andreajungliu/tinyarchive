@@ -1,3 +1,203 @@
-h1{
-    color:rgb(206, 192, 255);
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+}
+
+
+#titlepage {
+  font-size: 150px;
+  animation: lights 2s 100ms linear infinite;
+
+}
+
+
+body {
+  margin: 0;
+  font: 100% / 1.5 Raleway, sans-serif;
+  color: hsl(230, 100%, 95%);
+  background : linear-gradient(135deg, hwb(240 2% 95% / 0.893), hsl(216.37, 70.21%, 21.74%)); 
+  height: 100vh;
+  display: flex;
+  font-size: large;
+  font-weight: bold;
+  text-align:center;
+ 
+}
+
+/* Style for visited links */
+body a:visited {
+  color: #a5d1f8;
+}
+
+ol {
+  background: #e7c6c6;
+  padding: 30px;
+}
+
+ul {
+  background:-o-linear-gradient(135deg, hwb(248 60% 18% / 0.893), hsl(211, 59%, 10%));;
+  padding: 20px;
+}
+
+ol li {
+  background:#dceffb;
+  color: darkred;
+  padding: 5px;
+  margin-left: 35px;
+}
+
+ul li {
+  background: transparent;
+  color: #a5d1f8;
+  padding: 5px;
+  margin: 30px;
+  font-weight: 600; /* Corrected font weight property */
+  font-size: medium;
+  border: 2px solid #355E91;
+  text-decoration: none;
+  animation: lights 2s 100ms linear infinite;
+
+}
+
+ul li a {
+  color: #a5d1f8;
+  text-decoration: none;
+}
+
+ul li a:visited {
+  color: #a5d1f8;
+}
+
+ul {
+    list-style-type: none; /* Sets the list item marker to a filled circle */
+    margin: 0; /* Removes default margin */
+    padding: 30pt; /* Removes default padding */
+    
+  } 
+  
+  
+  h1 {
+    color: pink;
+    text-align: left;
+    font-weight:500;
+    
+  }
+
+  
+
+  h2 {
+    font-family: 'Metrophobic', sans-serif;
+    font-size: large;
+    text-align: left;
+    color:rgba(196, 240, 255, 0.476);
+    animation: lights 5s 300ms linear infinite;
+
+  }
+
+  h3, h4, h5, h6 {
+    font-family: 'Metrophobic', sans-serif;
+    color:rgba(196, 240, 255, 0.476)
+  }
+
+ #zodiac {
+  height: 300px; 
+  width: 350px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ } 
+
+
+ #zodiacdescription {
+  font-size:small; 
+  text-align:center
+ }
+  
+ .info{
+  text-align: left;
+ }
+
+
+/* Style for visited links */
+.info a:visited {
+  color: #a5d1f8;
+}
+
+.content {
+  text-align: left;
+}
+
+.breadcrumb {
+  padding: 5px; 
+  animation: lights 5s 750ms linear infinite;
+  background: #355E91;
+}
+
+.navigation-list {
+  font-weight: bolder;
+  background: transparent;
+  border:2px solid #355E91; 
+  text-decoration: none;
+
+
+}
+#self {
+  text-align: left;
+  font-size: large;
+  width: 70%; /* Adjust the width as needed */
+  float: left; /* Float the container to the left */
+  margin-right: 20px; /* Add some spacing between text and image */
+}
+}
+
+#ikebana {
+  height: 250px; 
+  width: 250px; 
+  width: 20%; /* Adjust the width as needed */
+  float: left; /* Float the image to the left */
+
 }
