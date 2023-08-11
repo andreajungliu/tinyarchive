@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <div class="breadcrumb">
-    <a href="/"> Tiny Library </a> / <a href= "/archive"> Archive </a>
+    <a href="/"> Time/Place Captured </a> / <a href= "/archive"> Archive </a>
 </div>
 <div class="page_title">
     {{item.name}}
@@ -19,13 +20,14 @@
     </div>
     <div class="info">
         <ul>
+            <li>Production Place: <p> {{item.productionplace}} </p> </li>
+            <li>Collected Location: <p> {{item.collectedlocation}}</p> </li>
+            <li>Measurements: <p> {{item.measurements}}</p> </li>
             <li>Language: {{item.language}}</li>
-            <li>Description: <p>{{item.description}}</p> </li>
+            <li>Description: <p>{{item.description|linebreaks}}</p> </li>
+            <li>Transcription: <p>{{item.transcription|linebreaks}}</p> </li>
         </ul>
     </div>
-    <div class="transcription">
-        Transcription: <p>{{item.transcription}}</p>
-    </div>
-    
+   
 </div>
 {% endblock %}

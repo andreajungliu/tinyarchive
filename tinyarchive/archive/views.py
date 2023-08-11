@@ -64,6 +64,10 @@ def item_detail(request, item_id):
             "name": archive_item.name,
             "pictures": pictures,
             "description": archive_item.description,
+            "culturesandperiods": archive_item.cultures_periods, 
+            "productionplace": archive_item.production_place, 
+            "collectedlocation": archive_item.collected_location, 
+            "measurements": archive_item.measurements
         }
         if isinstance(archive_item, Photograph):
             # Photo type is the user-readable version of the Photo Type, as described in Consts.
